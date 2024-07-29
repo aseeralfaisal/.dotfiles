@@ -4,7 +4,7 @@ __initDotFiles() {
 
   if [ "$input" = "y" ]; then
     if sudo apt install stow -y; then 
-      stow .
+      stow --ignore=init.zsh .
       echo "Dotfiles updated successfully! 🤟🎉"
     else
       echo "Error Occured during the process! 🎲"
