@@ -17,5 +17,4 @@ Before you begin, ensure you have the following tools installed:
    Change the permissions of the `init.zsh` script to make it executable:
 
    ```zsh
-   chmod +x init.zsh
-   ./init.zsh
+   chmod +x init.zsh && ./init.zsh
