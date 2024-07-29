@@ -21,4 +21,4 @@ Before you begin, ensure you have the following tools installed:
    ```zsh
    ./init.zsh
 
-https://github.com/user-attachments/assets/bdc8298c-ae9f-469a-8163-93681c14fa3e
+![image](https://github.com/user-attachments/assets/bdc8298c-ae9f-469a-8163-93681c14fa3e)
