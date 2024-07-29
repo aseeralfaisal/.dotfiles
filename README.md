@@ -7,7 +7,6 @@ Welcome to my dotfiles repository! This repository contains configuration files 
 Before you begin, ensure you have the following tools installed:
 
 - **GNU Stow**: Used to manage symlinks
-  - **Ubuntu**: Install with `sudo apt-get install stow`
 - **Zsh**: Required to execute the `init.zsh` script.
 
 ## Setup Instructions
