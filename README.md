@@ -17,7 +17,7 @@ Before you begin, ensure you have the following tools installed:
 
    ```zsh
    chmod +x init.zsh
-2. **Execute the file 
+2. Execute the file 
    ```zsh
    ./init.zsh
 
