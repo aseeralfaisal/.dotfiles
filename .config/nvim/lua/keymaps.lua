@@ -1,75 +1,56 @@
-local mappings = {
-	b = {
-		name = "buffers",
-		b = {
-			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr>",
-			"Buffers",
-		},
-		x = { "<cmd> lua require('bufdelete').bufdelete(0, true)<cr>", "Close Buffer" },
-	},
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	l = {
-		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = {
-			"<cmd>Telescope diagnostics bufnr=0<cr>",
-			"Document Diagnostics",
-		},
-		f = { "<cmd>lua require('conform').format()<cr>", "Format" },
-		g = { "<cmd>LazyGit<CR>", "Lazygit" },
-		w = {
-			"<cmd>Telescope diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
-		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
-		},
-		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
-		},
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
-	},
-	s = {
-		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
-		f = {
-			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<cr>",
-			"Find Files",
-		},
-		g = {
-			"<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<cr>",
-			"Live Grep",
-		},
-	},
-	t = {
-		name = "Telescope",
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	},
-}
 local opts
 local wk = require("which-key")
-wk.register(mappings, opts)
+wk.add({
+	{ "<leader>b", group = "buffers" },
+	{
+		"bb",
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr>",
+		desc = "buffers",
+	},
+	{ "bx", "<cmd> lua require('bufdelete').bufdelete(0, true)<cr>", desc = "Close Buffer" },
+
+	{ "<leader>s", group = "search" },
+	{ "sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+	{ "sc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
+	{ "sh", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
+	{ "sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+	{ "sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
+	{ "sR", "<cmd>Telescope registers<cr>", desc = "Registers" },
+	{ "sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+	{ "sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
+	{
+		"sf",
+		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<cr>",
+		desc = "Find Files",
+	},
+	{
+		"sg",
+		"<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<cr>",
+		desc = "Live Grep",
+	},
+
+	{ "<leader>t", group = "terminal" },
+	{ "tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Float Terminal" },
+	{ "th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Horizontal Term" },
+	{ "tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Vertical Term" },
+
+	{ "<leader>l", group = "LSP" },
+	{ "la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+	{ "ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+	{ "lf", "<cmd>lua require('conform').format()<cr>", desc = "Format" },
+	{ "lg", "<cmd>LazyGit<CR>", desc = "Lazygit" },
+	{ "lw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
+	{ "li", "<cmd>LspInfo<cr>", desc = "Info" },
+	{ "lI", "<cmd>LspInstallInfo<cr>", desc = "Installer Info" },
+	{ "lj", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", desc = "Next Diagnostic" },
+	{ "lk", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic" },
+	{ "lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
+	{
+		mode = { "n", "v" }, -- NORMAL and VISUAL mode
+		{ "q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
+		{ "w", "<cmd>w<cr>", desc = "Write" },
+	},
+})
 
 local keymaps = {
 	{ "n", "<leader>", ":WhichKey<CR>", opts },
