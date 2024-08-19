@@ -12,12 +12,6 @@ Before you begin, ensure you have the following tools installed:
 
 ## Setup Instructions
 
-1. **Make the `init.zsh` Script Executable**
-
-   Change the permissions of the `init.zsh` script to make it executable:
-
-   ```zsh
-   chmod +x init.zsh
-2. Execute the file 
+Execute the file 
    ```zsh
    ./init.zsh
