@@ -4,22 +4,21 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			format = {
-				timeout_ms = 3000,
-				async = false, -- not recommended to change
+				timeout_ms = 100000000000000000000000000000000000000000000,
+				async = true, -- not recommended to change
 				quiet = false, -- not recommended to change
 				lsp_fallback = true, -- not recommended to change
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- python = { "isort", "black" },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd", "prettier", stop_after_first = false },
 				typescript = { "prettierd", "prettier", stop_after_first = true },
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 			},
-			-- format_on_save = {
-			-- 	timeout_ms = 500,
-			-- 	lsp_fallback = true,
-			-- },
+			format_on_save = {
+				timeout_ms = 1000000000000000000000000000000000000000000000,
+				lsp_fallback = true,
+			},
 		})
 	end,
 }

@@ -48,12 +48,15 @@ o.cursorline = false
 o.foldmethod = "manual"
 o.foldlevel = 1
 
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+	[[
   augroup TerminalToggle
     autocmd!
     autocmd TermOpen * tnoremap <buffer> <C-n> <C-\><C-n><Cmd>NeotreeToggle<CR>
   augroup END
-]], false)
+]],
+	false
+)
 
 require("lazy").setup("plugins")
 
