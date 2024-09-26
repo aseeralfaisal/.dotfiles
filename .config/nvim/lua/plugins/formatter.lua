@@ -13,11 +13,7 @@ return {
   },
   config = function(_, opts)
     local conform = require("conform")
-
-    -- Setup "conform.nvim" to work
     conform.setup(opts)
-
-    -- Customise the default "prettier" command to format Markdown files as well
     conform.formatters.prettier = {
       prepend_args = { "--prose-wrap", "always" },
     }
