@@ -1,24 +1,25 @@
 return {
-	"stevearc/conform.nvim",
-	config = function()
-		local conform = require("conform")
-		conform.setup({
-			format = {
-				timeout_ms = 100000000000000000000000000000000000000000000,
-				async = true, -- not recommended to change
-				quiet = false, -- not recommended to change
-				lsp_fallback = true, -- not recommended to change
-			},
-			formatters_by_ft = {
-				lua = { "stylua" },
-				javascript = { "prettierd", "prettier", stop_after_first = false },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
-				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-			},
-			format_on_save = {
-				timeout_ms = 1000000000000000000000000000000000000000000000,
-				lsp_fallback = true,
-			},
-		})
-	end,
+  "stevearc/conform.nvim",
+  event = { "LspAttach", "BufReadPost", "BufNewFile" },
+  opts = {
+    formatters_by_ft = {
+      python = { "isort", "black" },
+      javascript = {"prettier", stop_after_first = true },
+    },
+    format_on_save = {
+      timeout_ms = 2500,
+      lsp_fallback = true,
+    },
+  },
+  config = function(_, opts)
+    local conform = require("conform")
+
+    -- Setup "conform.nvim" to work
+    conform.setup(opts)
+
+    -- Customise the default "prettier" command to format Markdown files as well
+    conform.formatters.prettier = {
+      prepend_args = { "--prose-wrap", "always" },
+    }
+  end,
 }
