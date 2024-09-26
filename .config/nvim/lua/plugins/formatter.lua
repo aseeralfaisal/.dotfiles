@@ -4,7 +4,7 @@ return {
   opts = {
     formatters_by_ft = {
       python = { "isort", "black" },
-      javascript = {"prettier", stop_after_first = true },
+      javascript = {"prettier" },
     },
     format_on_save = {
       timeout_ms = 2500,
