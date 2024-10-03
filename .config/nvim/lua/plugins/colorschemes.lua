@@ -59,12 +59,22 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
-		lazy = false,
+		lazy = true,
 		config = function()
 			require("catppuccin").setup({
 				flavour = "auto", -- latte, frappe, macchiato, mocha
 			})
 			vim.cmd("colorscheme catppuccin-macchiato")
+		end,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		priority = 1000,
+		lazy = false,
+		config = function()
+			require("kanagawa").setup()
+			vim.cmd("colorscheme kanagawa")
 		end,
 	},
 }
