@@ -2,13 +2,13 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.enable_wayland = true
-config.color_scheme = 'Hopscotch (base16)'
+config.color_scheme = 'Catppuccin Frappé (Gogh)'
 config.font = wezterm.font 'FiraCode Nerd Font Mono'
 config.font_size = 14.0
 config.use_fancy_tab_bar = false 
 config.enable_tab_bar = true 
-config.initial_rows = 60
-config.initial_cols = 140
+config.initial_rows = 52
+config.initial_cols = 160
 -- config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = "RESIZE"
 config.window_padding = {
