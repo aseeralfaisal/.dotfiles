@@ -36,6 +36,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
 nerd_fonts_cli() {
   cd ~/.nerd-fonts-cli/ || return
   chmod +x .install.sh
@@ -43,3 +44,11 @@ nerd_fonts_cli() {
 }
 alias nerd-fonts="nerd_fonts_cli"
 
+
+# pnpm
+export PNPM_HOME="/home/saad/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

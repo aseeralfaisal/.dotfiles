@@ -8,16 +8,17 @@ config.font_size = 14.0
 config.use_fancy_tab_bar = false 
 config.enable_tab_bar = true 
 config.initial_rows = 52
+
 config.initial_cols = 160
+config.window_background_opacity = 0.95
 -- config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = "RESIZE"
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 8,
+  right = 8,
+  top = 5,
+  bottom = 5,
 }
-config.window_background_opacity = 1
 
 config.colors = {
   tab_bar = {
