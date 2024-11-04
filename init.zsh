@@ -7,8 +7,10 @@ __initDotFiles() {
       read -p "Change shell to zsh(Y/n) " input_shell
       input_shell=$(echo "$input_shell" | tr '[:upper:]' '[:lower:]')
 
-      if [ "$input_shell" = "y" ]; then 
-        chsh -s $(which zsh)
+      if sudo dnf install zsh -y; then
+        if [ "$input_shell" = "y" ]; then 
+          chsh -s $(which zsh)
+        fi
       fi
 
       stow --ignore='README.md' --ignore='init.zsh' .
