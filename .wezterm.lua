@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.enable_wayland = true
-config.color_scheme = 'Catppuccin Frappé (Gogh)'
+config.color_scheme = 'Catppuccin Mocha'
 config.font = wezterm.font 'FiraCode Nerd Font Mono'
 config.font_size = 14.0
 config.use_fancy_tab_bar = false 
@@ -10,8 +10,8 @@ config.enable_tab_bar = true
 config.initial_rows = 52
 
 config.initial_cols = 160
-config.window_background_opacity = 0.95
--- config.window_close_confirmation = 'NeverPrompt'
+config.window_background_opacity = 0.98
+config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = "RESIZE"
 config.window_padding = {
   left = 8,
