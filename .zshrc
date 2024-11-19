@@ -36,6 +36,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+fpath=(~/zsh/zsh-completions/src $fpath)
 
 nerd_fonts_cli() {
   cd ~/.nerd-fonts-cli/ || return
@@ -44,7 +45,7 @@ nerd_fonts_cli() {
 }
 alias nerd-fonts="nerd_fonts_cli"
 
-
+ unsetopt PROMPT_SP
 # pnpm
 export PNPM_HOME="/home/saad/.local/share/pnpm"
 case ":$PATH:" in
@@ -52,3 +53,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
