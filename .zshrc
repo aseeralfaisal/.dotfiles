@@ -25,12 +25,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(~/.zsh/zsh-completions/src $fpath)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=$PATH:/usr/local/nvim-linux64/bin
-
 source <(fzf --zsh)
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -44,13 +38,4 @@ nerd_fonts_cli() {
   ./install.sh
 }
 alias nerd-fonts="nerd_fonts_cli"
-
- unsetopt PROMPT_SP
-# pnpm
-export PNPM_HOME="/home/saad/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
