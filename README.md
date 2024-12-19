@@ -1,5 +1,5 @@
 # Dotfiles Setup
-<img src="https://github.com/user-attachments/assets/296d32f2-ec24-400e-a4a6-310759e70265" width=800px >
+<img src="https://github.com/user-attachments/assets/c375c1e2-8ea1-41f0-8d84-821b6fc62e89" width=800px >
 
 Welcome to my dotfiles repository! This repository contains configuration files and a setup script to quickly configure your environment. The `init.zsh` script automates the process of symlinking these configuration files.
 
